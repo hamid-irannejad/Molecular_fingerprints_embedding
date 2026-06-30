@@ -1,0 +1,26 @@
+# Paths for input and output files
+[input]
+input_path = "./datasets/"  # Path where input SMILES files are located
+file_pattern = "*.smi"  # File pattern for input files (e.g., "*.csv", "*.smi")
+output_path = "./results"  # Path where output HDF5 files will be saved
+
+# ChemDist Model settings
+[chemdist]
+model_path = "./model_trained.pt"  # Path to the trained model .pt file
+device = "cuda"  # Device to use for computation, can be "cuda" or "cpu"
+
+[chemdist.params]  # Model parameters
+edge_in_feats = 12  # Number of edge features
+embed_size = 16  # Size of the embedding vector
+node_in_feats = 74  # Number of node features
+
+
+
+# Logging and error handling
+[logging]
+log_path = "logs/"  # Path where logs will be stored
+log_level = "INFO"  # Logging level (DEBUG, INFO, WARNING, ERROR, CRITICAL)
+
+# Parallel processing settings
+[parallel]
+num_workers = 4  # Number of parallel workers to use for processing (set to 1 for no parallelization)
